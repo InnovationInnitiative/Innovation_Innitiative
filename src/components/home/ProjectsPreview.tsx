@@ -7,7 +7,7 @@ const projects = [
         title: "Finsense",
         description: "An advanced stock market sentiment analysis tool integrating 'Man with Hat' architecture.",
         tags: ["FinTech", "Next.js", "AI Analysis"],
-        href: "https://bullvibe.innovationinnitiative.in", // Placeholder URL
+        href: "https://finsense.innovationinnitiative.in", // Placeholder URL
         color: "bg-blue-500/10 text-blue-500",
     },
     // Projects currently in stealth mode are hidden for AdSense compliance

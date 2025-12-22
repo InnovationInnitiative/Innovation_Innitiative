@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
                 <p>We may collect non-personal identification information about Users whenever they interact with our Site. Non-personal identification information may include the browser name, the type of computer and technical information about Users means of connection to our Site, such as the operating system and the Internet service providers utilized and other similar information.</p>
 
                 <h2>4. Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy, please contact us at: innovationinnitiative@gmail.com</p>
+                <p>If you have any questions about this Privacy Policy, please contact us at: innovationnnitiative5@gmail.com</p>
             </div>
         </div>
     );

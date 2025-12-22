@@ -77,7 +77,7 @@ export default function ContactPage() {
 
                         <div className="mt-8 pt-6 border-t border-border flex items-center justify-center gap-2 text-muted-foreground">
                             <Mail className="h-4 w-4" />
-                            <span className="text-sm">innovationinnitiative@gmail.com</span>
+                            <span className="text-sm">innovationnnitiative5@gmail.com</span>
                         </div>
                     </div>
                 )}
