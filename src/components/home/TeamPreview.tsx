@@ -20,7 +20,7 @@ const team = [
         bio: "Expert in Next.js, React, and Scalable Systems.",
         image: "/images/member2.jpg",
         github: "https://github.com/wwwavijitsaha13-art",
-        linkedin: "www.linkedin.com/in/avijit-saha-0a104628b"
+        linkedin: "https://www.linkedin.com/in/avijit-saha-0a104628b/"
     },
     {
         name: "Arpan Pal",
