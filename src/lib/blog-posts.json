@@ -1,0 +1,122 @@
+[
+    {
+        "title": "Tokenization and Stop Word Removal for Trading Sentiment",
+        "excerpt": "Why standard NLP preprocessing fails in finance. detailed look at custom tokenizer implementation for handling financial jargon.",
+        "date": "Dec 21, 2025",
+        "category": "Financial Analysis",
+        "author": "Avigyan Das",
+        "slug": "tokenization-stop-word-trading-sentiment"
+    },
+    {
+        "title": "Building a Financial Dictionary: Why 'Crash' and 'Growth' Matter",
+        "excerpt": "Creating a domain-specific lexicon vs. using generic Vader/TextBlob. Context-aware dictionaries outperform general sentiment analysis.",
+        "date": "Dec 18, 2025",
+        "category": "Financial Analysis",
+        "author": "Avigyan Das",
+        "slug": "financial-dictionary-context-matters"
+    },
+    {
+        "title": "Overcoming Sarcasm in Financial Headlines",
+        "excerpt": "The challenge of detecting tonal shifts in market news. Using transformer attention mechanisms to distinguish cynicism from optimism.",
+        "date": "Dec 15, 2025",
+        "category": "Financial Analysis",
+        "author": "Avigyan Das",
+        "slug": "overcoming-sarcasm-financial-headlines"
+    },
+    {
+        "title": "Transitioning from Rule-Based to Neural Sentiment Models",
+        "excerpt": "Evolution from bag-of-words to LSTM/Transformer architectures. A comparative analysis of accuracy and latency.",
+        "date": "Dec 20, 2025",
+        "category": "Backend Engineering",
+        "author": "Arpan Pal",
+        "slug": "rule-based-to-neural-sentiment-models"
+    },
+    {
+        "title": "Measuring Model Accuracy: Precision vs. Recall in Stocks",
+        "excerpt": "Why accuracy metric is misleading in imbalanced financial datasets. Optimizing for Precision is crucial for trading confidence.",
+        "date": "Dec 12, 2025",
+        "category": "Backend Engineering",
+        "author": "Arpan Pal",
+        "slug": "model-accuracy-precision-vs-recall"
+    },
+    {
+        "title": "Training a Model specifically for NSE/BSE Market Jargon",
+        "excerpt": "Fine-tuning BERT on Indian financial news corpus to capture local slang like 'Upper Circuit' and 'operator driven'.",
+        "date": "Dec 05, 2025",
+        "category": "Backend Engineering",
+        "author": "Arpan Pal",
+        "slug": "training-model-nse-bse-jargon"
+    },
+    {
+        "title": "Automated RSS Scraping Techniques for Financial News",
+        "excerpt": "Building a robust aggregation engine for real-time news. Handling rate limits, parsing XML, and de-duplication algorithms.",
+        "date": "Dec 19, 2025",
+        "category": "Data Processing",
+        "author": "Adrish Chatterjee",
+        "slug": "automated-rss-scraping-financial-news"
+    },
+    {
+        "title": "Handling Real-Time XML/RSS Feeds in JavaScript",
+        "excerpt": "Efficiently consuming and parsing feeds. Node.js streams vs. DOM parsing for performance in low-latency dashboards.",
+        "date": "Dec 10, 2025",
+        "category": "Data Processing",
+        "author": "Adrish Chatterjee",
+        "slug": "real-time-xml-rss-javascript"
+    },
+    {
+        "title": "Normalizing Financial Data for Clean Analysis",
+        "excerpt": "Dealing with inconsistent formats across multi-source data. Creating a unified schema to ensure analysis quality.",
+        "date": "Nov 28, 2025",
+        "category": "Data Processing",
+        "author": "Adrish Chatterjee",
+        "slug": "normalizing-financial-data-clean-analysis"
+    },
+    {
+        "title": "Visualizing Market 'Vibes' using SVG and CSS Masking",
+        "excerpt": "Creating engaging, non-numerical representations of sentiment. Manipulating SVG paths for dynamic gauge charts.",
+        "date": "Dec 22, 2025",
+        "category": "User Experience",
+        "author": "Avijit Saha",
+        "slug": "visualizing-market-vibes-svg-css"
+    },
+    {
+        "title": "Real-Time UI Updates without Server Latency",
+        "excerpt": "Keeping the dashboard alive with ticking prices. Implementing WebSockets vs. Server-Sent Events (SSE) for push updates.",
+        "date": "Dec 08, 2025",
+        "category": "User Experience",
+        "author": "Avijit Saha",
+        "slug": "real-time-ui-updates-no-latency"
+    },
+    {
+        "title": "Designing for Traders: Mobile-First Finance Dashboards",
+        "excerpt": "Fitting complex charts into small screens. CSS Grid layouts and touch-friendly patterns for fintech accessibility.",
+        "date": "Nov 25, 2025",
+        "category": "User Experience",
+        "author": "Avijit Saha",
+        "slug": "designing-traders-mobile-first-dashboards"
+    },
+    {
+        "title": "The Impact of Sentiment Analysis on Retail Trading Decisions",
+        "excerpt": "How AI tools empower individual investors. Statistical correlation between Finsense scores and retail volume.",
+        "date": "Dec 17, 2025",
+        "category": "Financial Analysis",
+        "author": "Arghadeep Saha",
+        "slug": "impact-sentiment-analysis-retail-trading"
+    },
+    {
+        "title": "Finsense vs. Traditional News: A Comparative Study",
+        "excerpt": "Speed and bias comparison between algo-driven sentiment and editorial news. Benchmarking latency and bias detection.",
+        "date": "Dec 03, 2025",
+        "category": "Financial Analysis",
+        "author": "Arghadeep Saha",
+        "slug": "finsense-vs-traditional-news-study"
+    },
+    {
+        "title": "Case Study: How Finsense Predicted [Stock X]'s Sentiment Shift",
+        "excerpt": "Retrospective analysis of a market event. Timeline interaction of News Fetch -> Sentiment Score -> Price Action.",
+        "date": "Nov 20, 2025",
+        "category": "Financial Analysis",
+        "author": "Arghadeep Saha",
+        "slug": "case-study-finsense-prediction"
+    }
+]
