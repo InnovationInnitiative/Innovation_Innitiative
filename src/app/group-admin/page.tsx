@@ -6,6 +6,7 @@ import { Copy, Check, Lock, FileJson } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { blogPosts } from "@/lib/blog-data";
 import { saveBlogPost } from "../actions";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
 
 // Hardcoded for safety if env fails, but prefers env
 const ADMIN_KEY = process.env.NEXT_PUBLIC_ADMIN_ACCESS_KEY || "adAGARAVAV@3308172425";
@@ -22,7 +23,7 @@ const authors = [
     "Avijit Saha",
     "Arpan Pal",
     "Arghadeep Saha",
-    "Adrish Chatterjee"
+    "Adrish Chakraborty"
 ];
 
 export default function GroupAdminPage() {
@@ -276,11 +277,11 @@ export default function GroupAdminPage() {
                                         </label>
                                     </div>
                                 </div>
-                                <textarea
+                                <MarkdownEditor
                                     value={body}
-                                    onChange={(e) => setBody(e.target.value)}
-                                    className="w-full p-3 rounded-lg bg-muted/50 border border-border focus:border-primary outline-none min-h-[300px] font-mono text-sm"
-                                    placeholder={isPlainText ? "Write plain text here. Paragraphs will be separated by double newlines." : "<p>Write your HTML content here...</p>"}
+                                    onChange={setBody}
+                                    placeholder={isPlainText ? "Write content here..." : "<p>Write your HTML content here...</p>"}
+                                    className="min-h-[400px]"
                                 />
                                 <p className="text-xs text-muted-foreground">
                                     {isPlainText

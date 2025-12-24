@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, User, Calendar, Tag } from "lucide-react";
 import { blogPosts } from "@/lib/blog-data";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 // This function generates the static paths for all blog posts at build time
 export function generateStaticParams() {
@@ -64,10 +65,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
 
                 {post.content ? (
-                    <div
-                        className="prose prose-invert max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-ul:text-muted-foreground"
-                        dangerouslySetInnerHTML={{ __html: post.content }}
-                    />
+                    <MarkdownRenderer content={post.content} />
                 ) : (
                     <>
                         {/* Content Placeholder - In a real scenario, this would be the rendered markdown body */}

@@ -52,7 +52,7 @@
         "excerpt": "Building a robust aggregation engine for real-time news. Handling rate limits, parsing XML, and de-duplication algorithms.",
         "date": "Dec 19, 2025",
         "category": "Data Processing",
-        "author": "Adrish Chatterjee",
+        "author": "Adrish Chakraborty",
         "slug": "automated-rss-scraping-financial-news"
     },
     {
@@ -60,7 +60,7 @@
         "excerpt": "Efficiently consuming and parsing feeds. Node.js streams vs. DOM parsing for performance in low-latency dashboards.",
         "date": "Dec 10, 2025",
         "category": "Data Processing",
-        "author": "Adrish Chatterjee",
+        "author": "Adrish Chakraborty",
         "slug": "real-time-xml-rss-javascript"
     },
     {
@@ -68,7 +68,7 @@
         "excerpt": "Dealing with inconsistent formats across multi-source data. Creating a unified schema to ensure analysis quality.",
         "date": "Nov 28, 2025",
         "category": "Data Processing",
-        "author": "Adrish Chatterjee",
+        "author": "Adrish Chakraborty",
         "slug": "normalizing-financial-data-clean-analysis"
     },
     {
@@ -99,21 +99,24 @@
         "title": "The Impact of Sentiment Analysis on Retail Trading Decisions",
         "excerpt": "How AI tools empower individual investors. Statistical correlation between Finsense scores and retail volume.",
         "date": "Dec 17, 2025",
-        "category: "Financial Analysis","author": "Arghadeep Saha",
+        "category": "Financial Analysis",
+        "author": "Arghadeep Saha",
         "slug": "impact-sentiment-analysis-retail-trading"
     },
     {
         "title": "Finsense vs. Traditional News: A Comparative Study",
         "excerpt": "Speed and bias comparison between algo-driven sentiment and editorial news. Benchmarking latency and bias detection.",
         "date": "Dec 03, 2025",
-        "category: "Financial Analysis","author": "Arghadeep Saha",
+        "category": "Financial Analysis",
+        "author": "Arghadeep Saha",
         "slug": "finsense-vs-traditional-news-study"
     },
     {
         "title": "Case Study: How Finsense Predicted [Stock X]'s Sentiment Shift",
         "excerpt": "Retrospective analysis of a market event. Timeline interaction of News Fetch -> Sentiment Score -> Price Action.",
         "date": "Nov 20, 2025",
-        "category: "Financial Analysis","author": "Arghadeep Saha",
+        "category": "Financial Analysis",
+        "author": "Arghadeep Saha",
         "slug": "case-study-finsense-prediction"
     }
 ]
