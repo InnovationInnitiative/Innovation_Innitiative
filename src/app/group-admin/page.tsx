@@ -39,6 +39,7 @@ export default function GroupAdminPage() {
     const [excerpt, setExcerpt] = useState("");
     const [body, setBody] = useState("");
     const [slug, setSlug] = useState("");
+    const [isPlainText, setIsPlainText] = useState(true);
 
     // Output State
     const [status, setStatus] = useState("");
@@ -65,6 +66,9 @@ export default function GroupAdminPage() {
                 setExcerpt(post.excerpt);
                 setSlug(post.slug);
                 setBody(post.content || "");
+                // Heuristic: If content looks like HTML, turn off plain text mode
+                const hasHtml = /<[a-z][\s\S]*>/i.test(post.content || "");
+                setIsPlainText(!hasHtml);
             }
         }
     }, [selectedPostSlug]);
@@ -92,6 +96,16 @@ export default function GroupAdminPage() {
         setIsSaving(true);
         setStatus("Saving locally...");
 
+        let finalContent = body;
+        if (isPlainText) {
+            // Convert double newlines to paragraphs
+            finalContent = body
+                .split(/\n\s*\n/)
+                .filter(para => para.trim().length > 0)
+                .map(para => `<p>${para.trim()}</p>`)
+                .join("");
+        }
+
         const postData = {
             title,
             excerpt,
@@ -99,7 +113,7 @@ export default function GroupAdminPage() {
             category: category as any,
             author,
             slug,
-            content: body
+            content: finalContent
         };
 
         const result = await saveBlogPost(postData);
@@ -247,15 +261,31 @@ export default function GroupAdminPage() {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-muted-foreground">Body Content (HTML/Markdown)</label>
+                                <div className="flex justify-between items-center mb-2">
+                                    <label className="text-sm font-medium text-muted-foreground">Body Content</label>
+                                    <div className="flex items-center gap-2">
+                                        <input
+                                            type="checkbox"
+                                            id="plainTextMode"
+                                            checked={isPlainText}
+                                            onChange={(e) => setIsPlainText(e.target.checked)}
+                                            className="rounded border-gray-600 bg-gray-900 text-primary focus:ring-primary"
+                                        />
+                                        <label htmlFor="plainTextMode" className="text-xs text-muted-foreground cursor-pointer select-none">
+                                            Plain Text Mode
+                                        </label>
+                                    </div>
+                                </div>
                                 <textarea
                                     value={body}
                                     onChange={(e) => setBody(e.target.value)}
                                     className="w-full p-3 rounded-lg bg-muted/50 border border-border focus:border-primary outline-none min-h-[300px] font-mono text-sm"
-                                    placeholder="<p>Write your post content here...</p>"
+                                    placeholder={isPlainText ? "Write plain text here. Paragraphs will be separated by double newlines." : "<p>Write your HTML content here...</p>"}
                                 />
                                 <p className="text-xs text-muted-foreground">
-                                    *Supported: HTML tags (h2, p, ul, li) and plain text.
+                                    {isPlainText
+                                        ? "*Writing in Plain Text. Content will be automatically converted to HTML paragraphs on save. Use double enter for new paragraphs."
+                                        : "*Writing in Raw HTML. You have full control over tags (h2, p, ul, li)."}
                                 </p>
                             </div>
                         </div>
