@@ -98,14 +98,8 @@ export default function GroupAdminPage() {
         setStatus("Saving locally...");
 
         let finalContent = body;
-        if (isPlainText) {
-            // Convert double newlines to paragraphs
-            finalContent = body
-                .split(/\n\s*\n/)
-                .filter(para => para.trim().length > 0)
-                .map(para => `<p>${para.trim()}</p>`)
-                .join("");
-        }
+        // removed auto-paragraph wrapping logic to prevent double HTML encoding
+
 
         const postData = {
             title,
