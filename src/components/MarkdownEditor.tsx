@@ -1,6 +1,6 @@
 
 import React, { useRef } from 'react';
-import { Bold, Italic, Heading, List, Code, Quote, Type, Link as LinkIcon, ListOrdered } from 'lucide-react';
+import { Bold, Italic, Heading, List, Code, Quote, Type, Link as LinkIcon, ListOrdered, Sigma } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface MarkdownEditorProps {
@@ -83,6 +83,11 @@ export function MarkdownEditor({ value, onChange, className, placeholder }: Mark
                     icon={<LinkIcon className="w-4 h-4" />}
                     onClick={() => insertFormat('[', '](url)')}
                     title="Link"
+                />
+                <ToolbarButton
+                    icon={<Sigma className="w-4 h-4" />}
+                    onClick={() => insertFormat('$', '$')}
+                    title="Math Equation"
                 />
             </div>
             <textarea
