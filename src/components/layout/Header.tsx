@@ -12,6 +12,7 @@ const links = [
     { href: "/projects", label: "Projects" },
     { href: "/blog", label: "Blog" },
     { href: "/converter", label: "Converter" },
+    { href: "/json-converter", label: "JSON Tool" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
 ];
