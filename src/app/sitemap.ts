@@ -1,9 +1,17 @@
 import { MetadataRoute } from 'next'
+import { blogPosts } from '@/lib/blog-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://innovationinnitiative.in'
 
-    return [
+    const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.date), // Assuming date format works or is roughly parseable, otherwise new Date()
+        changeFrequency: 'monthly',
+        priority: 0.7,
+    }))
+
+    const staticRoutes: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
             lastModified: new Date(),
@@ -59,4 +67,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.3,
         },
     ]
+
+    return [...staticRoutes, ...blogRoutes]
 }
