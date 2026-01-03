@@ -14,7 +14,8 @@ const CMS = dynamic(
 
       const config = {
         backend: {
-          name: "git-gateway",
+          name: "github",
+          repo: "InnovationInitiative/InnovationInnitiative",
           branch: "main",
         },
         local_backend: isLocal, // True only if on localhost

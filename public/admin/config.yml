@@ -1,6 +1,7 @@
 
 backend:
-  name: git-gateway
+  name: github
+  repo: InnovationInitiative/InnovationInnitiative
   branch: main
 
 # This line enables the local backend server for local development
