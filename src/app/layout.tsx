@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { LayoutShell } from "@/components/layout/LayoutShell";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,13 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={cn(inter.className, "min-h-screen flex flex-col antialiased bg-background text-foreground")}>
-        <Header />
-        <main className="flex-1 pt-16">
+        <LayoutShell
+          header={<Header />}
+          footer={<Footer />}
+        >
           {children}
-        </main>
-        <Footer />
+        </LayoutShell>
         <Analytics />
       </body>
     </html>

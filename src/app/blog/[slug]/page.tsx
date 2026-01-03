@@ -1,19 +1,21 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, User, Calendar, Tag } from "lucide-react";
-import { blogPosts } from "@/lib/blog-data";
+import { getBlogPosts } from "@/lib/blog-data";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 // This function generates the static paths for all blog posts at build time
-export function generateStaticParams() {
-    return blogPosts.map((post) => ({
+export async function generateStaticParams() {
+    const posts = await getBlogPosts();
+    return posts.map((post) => ({
         slug: post.slug,
     }));
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const post = blogPosts.find((p) => p.slug === slug);
+    const posts = await getBlogPosts();
+    const post = posts.find((p) => p.slug === slug);
 
     if (!post) {
         notFound();

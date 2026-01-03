@@ -41,7 +41,7 @@ export function Footer() {
                     <p>&copy; {currentYear} Innovation Innitiative. All rights reserved.</p>
                     <div className="flex gap-4">
                         {/* Social links placeholder */}
-                        <Link href="/group-admin" className="text-muted-foreground hover:text-primary transition-colors text-xs font-medium">
+                        <Link href="/admin" className="text-muted-foreground hover:text-primary transition-colors text-xs font-medium">
                             Admin Login
                         </Link>
                     </div>
