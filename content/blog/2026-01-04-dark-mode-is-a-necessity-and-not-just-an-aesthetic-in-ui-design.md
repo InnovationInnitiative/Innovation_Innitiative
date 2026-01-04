@@ -101,8 +101,7 @@ very less power in dark mode than bright mode.
 high-contrast dark theme and can now visualize market sentiments or any other
 content peacefully.  
 
-How I
-Implemented This:
+How I Implemented This:
 
 For FinSense, I used Tailwind CSS.
 
@@ -121,7 +120,7 @@ body {
 }
 
 @layer utilities {
-  .glass-panel {
+  {
     @apply bg-gray-900/40 backdrop-blur-md border border-gray-800;
   }
 }
@@ -134,7 +133,5 @@ benefits of dark theme.
 CONCLUSION
 
 If you are building a tool/website/app that requires analysis, long session times and of high intent like a trader, code editor, dark mode is a necessity and not a fancy feature. It very much adds to the user experience.
-
-
 
 The more you can keep a user on your site, the more revenue you can generate and can also attract more user. Design is not just about looks it’s also about how much usable the design is.
