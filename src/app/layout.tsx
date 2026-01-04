@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { LayoutShell } from "@/components/layout/LayoutShell";
 import { cn } from "@/lib/utils";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { GoogleAdsense } from "@/components/GoogleAdsense"; // Import
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,6 +31,7 @@ export default function RootLayout({
           {children}
         </LayoutShell>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
+        <GoogleAdsense pId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID} />
         <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" strategy="lazyOnload" />
       </body>
     </html>
