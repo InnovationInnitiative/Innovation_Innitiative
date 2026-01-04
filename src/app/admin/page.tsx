@@ -14,10 +14,13 @@ const CMS = dynamic(
 
       const config = {
         backend: {
-          name: "git-gateway",
+          name: "github",
+          repo: "InnovationInnitiative/Innovation_Innitiative",
           branch: "main",
+          base_url: "https://innovation-oauth.vercel.app",
+          auth_endpoint: "auth",
         },
-        local_backend: isLocal, // True only if on localhost
+        local_backend: false, // Disable local backend in production
         media_folder: "public/images/uploads",
         public_folder: "/images/uploads",
         collections: [
