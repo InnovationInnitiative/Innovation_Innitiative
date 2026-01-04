@@ -73,38 +73,40 @@ const CMS = dynamic(
               label: "Code",
               widget: "text", // Using text widget avoids nested code mirror issues
             },
-          ],
-          pattern: /^```(\S*)\n([\s\S]*?)\n```/,
-          fromBlock: function (match: any) {
-            return {
-              language: match[1] || "text",
-              code: match[2],
-            };
           },
-          toBlock: function (obj: any) {
-            const lang = obj.language === "text" ? "" : obj.language;
-            return "```" + (lang || "") + "\n" + (obj.code || "") + "\n```";
-          },
-          toPreview: function (obj: any) {
-            return (
-              '<pre><code class="language-' +
-              (obj.language || "text") +
-              '">' +
-              (obj.code || "") +
-              "</code></pre>"
-            );
-          },
+        ],
+// Regex to match code blocks, handling different newline formats (CRLF/LF)
+pattern: /^```([a-zA-Z0-9]*)\s*[\r\n]+([\s\S]*?)[\r\n]+```/,
+  fromBlock: function (match: any) {
+    return {
+      language: match[1] || "text",
+      code: match[2],
+    };
+  },
+toBlock: function (obj: any) {
+  const lang = obj.language === "text" ? "" : obj.language;
+  return "```" + (lang || "") + "\n" + (obj.code || "") + "\n```";
+},
+toPreview: function (obj: any) {
+  return (
+    '<pre><code class="language-' +
+    (obj.language || "text") +
+    '">' +
+    (obj.code || "") +
+    "</code></pre>"
+  );
+},
         });
       }
 
-      if (typeof cmsApp.init === 'function') {
-        cmsApp.init({ config });
-      } else {
-        console.error("Could not find CMS.init function", cms);
-      }
-      return () => null;
+if (typeof cmsApp.init === 'function') {
+  cmsApp.init({ config });
+} else {
+  console.error("Could not find CMS.init function", cms);
+}
+return () => null;
     }),
-  { ssr: false, loading: () => <p className="text-center p-10">Loading CMS...</p> }
+{ ssr: false, loading: () => <p className="text-center p-10">Loading CMS...</p> }
 );
 
 // Admin Access Key
