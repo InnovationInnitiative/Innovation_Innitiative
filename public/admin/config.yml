@@ -1,7 +1,10 @@
 
 backend:
-  name: git-gateway
+  name: github
+  repo: InnovationInnitiative/Innovation_Innitiative
   branch: main
+  base_url: https://innovation-oauth.vercel.app
+  auth_endpoint: auth
 
 # This line enables the local backend server for local development
 local_backend: true
