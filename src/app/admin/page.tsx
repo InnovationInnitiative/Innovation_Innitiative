@@ -53,6 +53,46 @@ const CMS = dynamic(
         ],
       };
 
+      // Register Custom Code Block Component to fix language persistence
+      cms.registerEditorComponent({
+        id: "code-block",
+        label: "Code Block",
+        fields: [
+          {
+            name: "language",
+            label: "Language",
+            widget: "select",
+            options: ["javascript", "typescript", "css", "html", "python", "bash", "json", "yaml", "markdown", "text"],
+            default: "text",
+          },
+          {
+            name: "code",
+            label: "Code",
+            widget: "text", // Using text widget avoids nested code mirror issues
+          },
+        ],
+        pattern: /^```(\S*)\n([\s\S]*?)\n```/,
+        fromBlock: function (match: any) {
+          return {
+            language: match[1] || "text",
+            code: match[2],
+          };
+        },
+        toBlock: function (obj: any) {
+          const lang = obj.language === "text" ? "" : obj.language;
+          return "```" + (lang || "") + "\n" + (obj.code || "") + "\n```";
+        },
+        toPreview: function (obj: any) {
+          return (
+            '<pre><code class="language-' +
+            (obj.language || "text") +
+            '">' +
+            (obj.code || "") +
+            "</code></pre>"
+          );
+        },
+      });
+
       if (typeof cms.init === 'function') {
         cms.init({ config });
       } else if (cms.default && typeof cms.default.init === 'function') {
