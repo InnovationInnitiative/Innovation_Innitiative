@@ -36,7 +36,7 @@ time. By flipping the color of the page to dark themed, we reduced the
 luminance and can prevent our user’s from eye strain.   
 
 2. Information
-Density and High Contrast
+   Density and High Contrast
 
 Financial apps are too noisy. Though FinSense is
 a lightweight website, but there are websites which overwhelm you with too many
@@ -127,7 +127,6 @@ body {
 }
 ```
 
-
 Here instead of #000000 (pure black), I used #020308
 which serves our purpose to prevent text blurring, still maintaining other
 benefits of dark theme. 
@@ -135,5 +134,7 @@ benefits of dark theme.
 CONCLUSION
 
 If you are building a tool/website/app that requires analysis, long session times and of high intent like a trader, code editor, dark mode is a necessity and not a fancy feature. It very much adds to the user experience.
+
+
 
 The more you can keep a user on your site, the more revenue you can generate and can also attract more user. Design is not just about looks it’s also about how much usable the design is.
