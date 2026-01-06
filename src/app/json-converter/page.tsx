@@ -267,7 +267,7 @@ export default function JsonConverterPage() {
                                 open, just in case.
                             </p>
                             <p className="pt-4 text-blue-400 font-medium">
-                                — Happy coding, from the I.I. Team
+                                — Arpan Pal
                             </p>
                         </div>
                     </div>

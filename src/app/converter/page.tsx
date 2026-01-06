@@ -267,7 +267,7 @@ export default function ConverterPage() {
                                 Hope it saves you a few minutes of headache today!
                             </p>
                             <p className="pt-4 text-primary font-medium">
-                                — A fellow builder at Innovation Initiative
+                                — Avigyan Das
                             </p>
                         </div>
                     </div>
