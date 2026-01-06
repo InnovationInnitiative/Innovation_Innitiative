@@ -228,6 +228,50 @@ export default function ConverterPage() {
                         <p>Supports conversion between standard bases and custom bases (2-36).</p>
                     </motion.div>
                 </div>
+
+                {/* Developer Explanation Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="max-w-3xl mx-auto mt-20 p-8 md:p-10 bg-card/30 backdrop-blur border border-border/50 rounded-3xl"
+                >
+                    <div className="prose prose-invert max-w-none">
+                        <h3 className="text-2xl font-bold mb-6 text-foreground/90">A Note from the Lab</h3>
+                        <div className="space-y-4 text-muted-foreground leading-relaxed font-light">
+                            <p>
+                                Hey there! As someone who's spent countless late nights staring at memory dumps and binary streams,
+                                I know exactly why you're here. We built this Number System Converter because, frankly, constantly
+                                switching between scientific calculators or manually scribbling out base conversions on a whiteboard
+                                is a pain. At the Innovation Initiative, we believe the tools you use should just <em>work</em>
+                                and feel good doing it.
+                            </p>
+                            <p>
+                                I remember when I first started learning about low-level computing; understanding how data is
+                                actually represented was a huge hurdle. It's not just about 0s and 1s; it's about seeing the
+                                patterns in Hex (16 is such a beautiful number for computers, isn't it?) or realizing how compact
+                                Octal can be for permissions. This tool isn't just a utility for us; it's a little bridge between
+                                the human decimal world we grow up in and the machine world we build in.
+                            </p>
+                            <p>
+                                We designed this with a few specific things in mind. We wanted it to be fast—real-time fast.
+                                You shouldn't have to hit 'submit' just to see what <code className="text-primary/80">1101</code>
+                                is in decimal. We also wanted it to handle the weird stuff. Need to convert from Base-7 to Base-23?
+                                We got you. It might not come up often, but when it does, you don't want to be writing a custom
+                                script for it.
+                            </p>
+                            <p>
+                                So, whether you're a student wrapping your head around binary logic for the first time, or a
+                                seasoned systems engineer debugging a network packet, this little corner of our hub is for you.
+                                It's simple, it's clean, and it's built with that genuine "for devs, by devs" spirit we love here.
+                                Hope it saves you a few minutes of headache today!
+                            </p>
+                            <p className="pt-4 text-primary font-medium">
+                                — A fellow builder at Innovation Initiative
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </div>
     );

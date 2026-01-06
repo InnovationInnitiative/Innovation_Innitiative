@@ -231,6 +231,47 @@ export default function JsonConverterPage() {
                         </div>
                     </motion.div>
                 </div>
+
+                {/* Developer Explanation Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="max-w-3xl mx-auto mt-20 p-8 md:p-10 bg-card/30 backdrop-blur border border-border/50 rounded-3xl"
+                >
+                    <div className="prose prose-invert max-w-none">
+                        <h3 className="text-2xl font-bold mb-6 text-foreground/90">Why We Built This</h3>
+                        <div className="space-y-4 text-muted-foreground leading-relaxed font-light">
+                            <p>
+                                Let's be real—managing data formatting is probably 90% of the "busy work" we do as developers.
+                                I can't tell you how many times I've had a client or a team member send me a list of requirements
+                                in a Word doc, or a CSV dump from some legacy system, and I just needed it in JSON <em>now</em>
+                                to mock up an API response. That's exactly why we whipped up this Text to JSON Converter.
+                            </p>
+                            <p>
+                                At the Innovation Initiative, we're all about removing friction. You shouldn't have to manually
+                                wrap quotes around keys or check for missing commas line by line. It's tedious, error-prone,
+                                and honestly, a waste of your creative energy. This tool is our way of saying, "Here, let us
+                                handle the boring syntax stuff so you can get back to building."
+                            </p>
+                            <p>
+                                We included a few modes that we use personally. The <strong>Lines to Array</strong> feature?
+                                That's my go-to when I paste a list of names or IDs. The <strong>CSV to JSON</strong> is a
+                                lifesaver when dealing with spreadsheet data. And of course, the <strong>Validator</strong>—because
+                                nothing hurts more than a cryptic syntax error crashing your app because of a stray trailing comma.
+                            </p>
+                            <p>
+                                We built this to be a workspace, not just a function. It respects your time. It’s local, it’s fast,
+                                and it doesn't send your data flying off to some unknown server. It’s just running right here in
+                                your browser. We use this daily, and we hope it becomes one of those reliable little tabs you keep
+                                open, just in case.
+                            </p>
+                            <p className="pt-4 text-blue-400 font-medium">
+                                — Happy coding, from the I.I. Team
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </div>
     );
