@@ -124,6 +124,7 @@ body {
     @apply bg-gray-900/40 backdrop-blur-md border border-gray-800;
   }
 }
+
 ```
 
 Here instead of #000000 (pure black), I used #020308
