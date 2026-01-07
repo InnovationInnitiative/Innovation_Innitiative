@@ -58,54 +58,7 @@ const CMS = dynamic(
 
       const cmsApp = cms.default || cms;
 
-      // Register Custom Code Block Component to fix language persistence
-      if (cmsApp.registerEditorComponent) {
-        cmsApp.registerEditorComponent({
-          id: "code-block",
-          label: "Code Block",
-          fields: [
-            {
-              name: "language",
-              label: "Language",
-              widget: "select",
-              options: ["javascript", "typescript", "css", "html", "python", "bash", "json", "yaml", "markdown", "text"],
-              default: "text",
-            },
-            {
-              name: "code",
-              label: "Code",
-              widget: "text", // Using text widget avoids nested code mirror issues
-            },
-          ],
-          // Regex to match code blocks, handling different newline formats (CRLF/LF)
-          pattern: /^```([a-zA-Z0-9\+\-\.#]*)[ \t]*[\r\n]+([\s\S]*?)[\r\n]+```/m,
-          fromBlock: function (match: any) {
-            return {
-              language: match[1] || "text",
-              code: match[2],
-            };
-          },
-          toBlock: function (obj: any) {
-            const getValue = (o: any, key: string) => (o && typeof o.get === "function" ? o.get(key) : o[key]);
-            const lang = getValue(obj, "language");
-            const code = getValue(obj, "code");
-            const finalLang = lang === "text" ? "" : lang;
-            return "```" + (finalLang || "") + "\n" + (code || "") + "\n```";
-          },
-          toPreview: function (obj: any) {
-            const getValue = (o: any, key: string) => (o && typeof o.get === "function" ? o.get(key) : o[key]);
-            const lang = getValue(obj, "language") || "text";
-            const code = getValue(obj, "code") || "";
-            return (
-              '<pre><code class="language-' +
-              lang +
-              '">' +
-              code +
-              "</code></pre>"
-            );
-          },
-        });
-      }
+
 
       if (typeof cmsApp.init === 'function') {
         cmsApp.init({ config });
