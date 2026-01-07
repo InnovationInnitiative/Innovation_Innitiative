@@ -78,7 +78,7 @@ const CMS = dynamic(
             },
           ],
           // Regex to match code blocks, handling different newline formats (CRLF/LF)
-          pattern: /^```([a-zA-Z0-9\+\-\.#]*)\s*[\r\n]+([\s\S]*?)[\r\n]+```/m,
+          pattern: /^```([a-zA-Z0-9\+\-\.#]*)[ \t]*[\r\n]+([\s\S]*?)[\r\n]+```/m,
           fromBlock: function (match: any) {
             return {
               language: match[1] || "text",
