@@ -86,15 +86,21 @@ const CMS = dynamic(
             };
           },
           toBlock: function (obj: any) {
-            const lang = obj.language === "text" ? "" : obj.language;
-            return "```" + (lang || "") + "\n" + (obj.code || "") + "\n```";
+            const getValue = (o: any, key: string) => (o && typeof o.get === "function" ? o.get(key) : o[key]);
+            const lang = getValue(obj, "language");
+            const code = getValue(obj, "code");
+            const finalLang = lang === "text" ? "" : lang;
+            return "```" + (finalLang || "") + "\n" + (code || "") + "\n```";
           },
           toPreview: function (obj: any) {
+            const getValue = (o: any, key: string) => (o && typeof o.get === "function" ? o.get(key) : o[key]);
+            const lang = getValue(obj, "language") || "text";
+            const code = getValue(obj, "code") || "";
             return (
               '<pre><code class="language-' +
-              (obj.language || "text") +
+              lang +
               '">' +
-              (obj.code || "") +
+              code +
               "</code></pre>"
             );
           },
