@@ -106,7 +106,24 @@ How I Implemented This:
 For FinSense, I used Tailwind CSS.
 
 ```
+@import "tailwindcss";
 
+:root {
+  --background: #020308;
+  --foreground: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-gray-900/40 backdrop-blur-md border border-gray-800;
+  }
+}
 ```
 
 Here instead of #000000 (pure black), I used #020308
