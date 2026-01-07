@@ -21,16 +21,19 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
                 components={{
                     code({ node, inline, className, children, ...props }: any) {
                         const match = /language-(\w+)/.exec(className || '');
-                        return !inline && match ? (
-                            <SyntaxHighlighter
-                                style={vscDarkPlus}
-                                language={match[1]}
-                                PreTag="div"
-                                {...props}
-                            >
-                                {String(children).replace(/\n$/, '')}
-                            </SyntaxHighlighter>
-                        ) : (
+                        if (!inline) {
+                            return (
+                                <SyntaxHighlighter
+                                    style={vscDarkPlus}
+                                    language={match ? match[1] : 'text'}
+                                    PreTag="div"
+                                    {...props}
+                                >
+                                    {String(children).replace(/\n$/, '')}
+                                </SyntaxHighlighter>
+                            );
+                        }
+                        return (
                             <code className={className} {...props}>
                                 {children}
                             </code>
