@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next'
-import { blogPosts } from '@/lib/blog-data'
+import { getBlogPosts } from '@/lib/blog-data'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://innovationinnitiative.in'
+    const posts = await getBlogPosts();
 
-    const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.date), // Assuming date format works or is roughly parseable, otherwise new Date()
+        lastModified: new Date(post.date),
         changeFrequency: 'monthly',
         priority: 0.7,
     }))
