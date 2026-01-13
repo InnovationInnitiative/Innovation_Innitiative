@@ -4,6 +4,7 @@ import { ArrowLeft, User, Calendar, Tag } from "lucide-react";
 import { getBlogPosts } from "@/lib/blog-data";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { AdUnit } from "@/components/AdUnit"; // Import
+import Image from "next/image";
 
 // This function generates the static paths for all blog posts at build time
 export async function generateStaticParams() {
@@ -72,6 +73,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                 <div className="text-xs text-muted-foreground">Innovation Innitiative Team</div>
                             </div>
                         </div>
+
+                        {post.mainImage && (
+                            <div className="mt-8 relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden border border-border">
+                                <Image
+                                    src={post.mainImage}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                            </div>
+                        )}
                     </header>
 
                     {/* Ad Unit - Top of Content (Mobile/All) */}
