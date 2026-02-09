@@ -7,24 +7,23 @@ const projects = [
         title: "Finsense",
         description: "An advanced stock market sentiment analysis tool integrating 'Man with Hat' architecture.",
         tags: ["FinTech", "Next.js", "AI Analysis"],
-        href: "https://finsense.innovationinnitiative.in", // Placeholder URL
+        href: "https://finsense.innovationinnitiative.in",
         color: "bg-blue-500/10 text-blue-500",
     },
-    // Projects currently in stealth mode are hidden for AdSense compliance
-    // {
-    //     title: "Coming Soon",
-    //     description: "",
-    //     tags: ["NLP", "Generative AI", "Python"],
-    //     href: "#",
-    //     color: "bg-purple-500/10 text-purple-500",
-    // },
-    // {
-    //     title: "Coming Soon",
-    //     description: "",
-    //     tags: ["Quantum Computing", "Research"],
-    //     href: "#",
-    //     color: "bg-emerald-500/10 text-emerald-500",
-    // },
+    {
+        title: "Lexi",
+        description: "AI-powered legal shorthand transcription tool for efficient documentation.",
+        tags: ["LegalTech", "Next.js", "AI"],
+        href: "https://lexi.innovationinnitiative.in/",
+        color: "bg-purple-500/10 text-purple-500",
+    },
+    {
+        title: "CV Radar",
+        description: "Advanced ATS score checker and resume optimizer to boost your career prospects.",
+        tags: ["Career", "AI", "Resume Analysis"],
+        href: "https://cvradar.innovationinnitiative.in/",
+        color: "bg-emerald-500/10 text-emerald-500",
+    },
 ];
 
 export function ProjectsPreview() {
